@@ -1,0 +1,33 @@
+﻿<Window x:Class="_21_играаа.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_21_играаа"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="788" Width="506" Background="#F7516A">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="307*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="127*"/>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="171*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="127*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Center" FontSize="30" FontWeight="Medium" Margin="0,15,0,0" Foreground="#031A42">Добро пожаловать!</TextBlock>
+
+        <Button Grid.Row="4" Grid.Column="1" Margin="30,50,30,50" FontSize="20" Background="White" Foreground="#031A42" Click="StartGame_Click">Играть</Button>
+
+        <TextBlock Grid.Row="1" Foreground="White" TextAlignment="Center" FontSize="140" Margin="0,-40,0,0">A</TextBlock>
+        <TextBlock Grid.Row="6" Grid.Column="3" Foreground="White" TextAlignment="Center" FontSize="140" Margin="0,-40,0,0">A</TextBlock>
+
+    </Grid>
+</Window>

@@ -1,0 +1,74 @@
+﻿<Window x:Class="_21_играаа.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_21_играаа"
+        mc:Ignorable="d"
+        Title="Window1" Height="600" Width="1000" Background="#F7516A">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="67*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="617*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Количество карт и счёт для компьютера -->
+        <TextBlock Grid.Row="0" FontSize="30" Margin="0,40,0,0">Счёт:</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="0,0,0,0">Карт:</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="70,42,2,0" Text="{Binding DisplayDealerScore}"/>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="70,0,2,0" Text="{Binding DealerCards.Count}"/>
+
+        <!-- Количество карт и счёт для игрока -->
+        <TextBlock Grid.Row="2" FontSize="30" Margin="0,0,0,0">Счёт:</TextBlock>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="0,40,0,0">Карт:</TextBlock>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="70,1,2,0" Text="{Binding PlayerScore}"/>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="70,40,2,0" Text="{Binding PlayerCards.Count}"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" Margin="320,0,0,0">Противник</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Margin="340,1,0,0">Игрок</TextBlock>
+
+        <Button Grid.Row="1" Margin="10,110,10,230" Click="Button_Click">Выйти</Button>
+        <Button Grid.Row="1" Margin="10,180,10,160" Click="Button_Click_1">Перезагрузить</Button>
+
+        <Button Grid.Row="2" Grid.Column="1" Margin="250,35,410,5" Click="Button_Click_2">Добавить</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="370,35,280,5" Click="Button_Click_3">Пропустить</Button>
+
+        <!-- Карты компьютера -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="-42,0,0,220">
+            <ItemsControl ItemsSource="{Binding DealerCards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImagePath}" Width="100" Height="150" Margin="5"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <!-- Карты игрока -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="-42,220,0,0">
+            <ItemsControl ItemsSource="{Binding PlayerCards}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding ImagePath}" Width="100" Height="150" Margin="5"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
