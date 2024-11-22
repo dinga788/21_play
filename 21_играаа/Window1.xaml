@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_21_играаа"
         mc:Ignorable="d"
-        Title="Window1" Height="600" Width="1000" Background="#F7516A">
-
+        Title="Window1" Height="600" Width="1000" Background="#F7516A" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="67*"/>
@@ -17,6 +16,8 @@
             <ColumnDefinition Width="183*"/>
             <ColumnDefinition Width="617*"/>
         </Grid.ColumnDefinitions>
+        
+        
 
         <!-- Количество карт и счёт для компьютера -->
         <TextBlock Grid.Row="0" FontSize="30" Margin="0,40,0,0" Foreground="#031A42">Счёт:</TextBlock>
