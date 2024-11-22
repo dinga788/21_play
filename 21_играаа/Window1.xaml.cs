@@ -9,19 +9,19 @@ namespace _21_играаа
 {
     public partial class Window1 : Window, INotifyPropertyChanged
     {
-        private ObservableCollection<Card> _playerCards;//карты игрока и дилера(Компьютера)
-        private ObservableCollection<Card> _dealerCards;
+        private ObservableCollection<Card> playerCards;//карты игрока и дилера(Компьютера)
+        private ObservableCollection<Card> dealerCards;
 
-        private int _playerScore;//переменные для хранения очков игрока и да
-        private int _dealerScore;
+        private int playerScore;//переменные для хранения очков игрока и да
+        private int dealerScore;
 
-        private Deck _deck = new Deck();//ну тут экземляр колоды карт
+        private Deck deck = new Deck();//ну тут экземляр колоды карт
 
         public Window1()
         {
             InitializeComponent();
-            _playerCards = new ObservableCollection<Card>();//те же карты игроков
-            _dealerCards = new ObservableCollection<Card>();
+            playerCards = new ObservableCollection<Card>();//те же карты игроков
+            dealerCards = new ObservableCollection<Card>();
 
             DataContext = this;//привязка
             NewGame();
@@ -36,40 +36,40 @@ namespace _21_играаа
 
         public ObservableCollection<Card> PlayerCards//доступ к колекции карт игрока с уведомлениями
         {
-            get { return _playerCards; }
+            get { return playerCards; }
             set
             {
-                _playerCards = value;
+                playerCards = value;
                 OnPropertyChanged(nameof(PlayerCards));
             }
         }
 
-        public ObservableCollection<Card> DealerCards//доступ к колекции карт игрока с уведомлениями
+        public ObservableCollection<Card> DealerCards//доступ к колекции карт додика с уведомлениями
         {
-            get { return _dealerCards; }
+            get { return dealerCards; }
             set
             {
-                _dealerCards = value;
+                dealerCards = value;
                 OnPropertyChanged(nameof(DealerCards));
             }
         }
 
         public int PlayerScore//хранение очков игрока
         {
-            get { return _playerScore; }
+            get { return playerScore; }
             set
             {
-                _playerScore = value;
+                playerScore = value;
                 OnPropertyChanged(nameof(PlayerScore));
             }
         }
 
         public int DealerScore//хранение очков компутахтера
         {
-            get { return _dealerScore; }
+            get { return dealerScore; }
             set
             {
-                _dealerScore = value;
+                dealerScore = value;
                 OnPropertyChanged(nameof(DealerScore));
             }
         }
@@ -86,16 +86,16 @@ namespace _21_играаа
 
         internal void NewGame()//новая игра, где создаётся колода карт и чистим компутахтер и игрока
         {
-            _deck = new Deck();
-            _deck.Shuffle();
+            deck = new Deck();
+            deck.Shuffle();
 
             PlayerCards.Clear();
             DealerCards.Clear();
 
             for (int i = 0; i < 2; i++)//раздаём всем по 2 карты, но карта у компутахтера первая скрыта
             {
-                PlayerCards.Add(_deck.DrawCard());
-                Card dealerCard = _deck.DrawCard();
+                PlayerCards.Add(deck.DrawCard());
+                Card dealerCard = deck.DrawCard();
 
                 if (i == 0)
                 {
@@ -122,13 +122,13 @@ namespace _21_играаа
             }
         }
 
-        private string _displayDealerScore;//отображаем правильно счёт компутахтера
+        private string displayDealerScore;//отображаем правильно счёт компутахтера
         public string DisplayDealerScore
         {
-            get { return _displayDealerScore; }
+            get { return displayDealerScore; }
             set
             {
-                _displayDealerScore = value;
+                displayDealerScore = value;
                 OnPropertyChanged(nameof(DisplayDealerScore));
             }
         }
@@ -176,9 +176,9 @@ namespace _21_играаа
 
         private void DealCardToDealer()//метод для раздачи карт клмпутахтеру(*исправить*)
         {
-            if (MinPossibleDealerScore < 17)
+            if (MinPossibleDealerScore < 19)
             {
-                var dealerCard = _deck.DrawCard();
+                var dealerCard = deck.DrawCard();
                 if (dealerCard != null)
                 {
                     DealerCards.Add(dealerCard);
@@ -186,7 +186,7 @@ namespace _21_играаа
 
                     if (MaxPossibleDealerScore > 21)
                     {
-                        MessageBox.Show("Дилер перебрал! Вы выиграли.");
+                        MessageBox.Show("Противник перебрал! Вы выиграли.");
                         NewGame();
                     }
                 }
@@ -195,7 +195,7 @@ namespace _21_играаа
 
         private void CheckWinner()//проверка победителей
         {
-            if (_deck.Count == 0)
+            if (deck.Count == 0)
             {
                 MessageBox.Show("Карты закончились, никто не выиграл.");
                 NewGame();
@@ -214,9 +214,23 @@ namespace _21_играаа
                 return;
             }
 
+            if (PlayerScore == 21 && DealerScore == 21)
+            {
+                MessageBox.Show("У всех игроков блэкджек! Ничья!");
+                NewGame();
+                return;
+            }
+
+            if (PlayerScore == DealerScore)
+            {
+                MessageBox.Show($"Счёт у всех: {PlayerScore}, ничья!");
+                NewGame();
+                return;
+            }
+
             if (DealerScore > 21)
             {
-                MessageBox.Show("Дилер перебрал! Вы выиграли.");
+                MessageBox.Show("Противник перебрал! Вы выиграли.");
                 NewGame();
                 return;
             }
@@ -229,18 +243,18 @@ namespace _21_играаа
                 }
                 else if (PlayerScore != 21 && DealerScore == 21)
                 {
-                    MessageBox.Show("У дилера блэкджек. Вы проиграли!");
+                    MessageBox.Show("У противника блэкджек. Вы проиграли!");
                 }
             }
             else
             {
                 if (PlayerScore > DealerScore)
                 {
-                    MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт дилера: {DealerScore}. Вы выиграли!");
+                    MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт противника: {DealerScore}. Вы выиграли!");
                 }
                 else
                 {
-                    MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт дилера: {DealerScore}. К сожалению, вы проиграли...");
+                    MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт противника: {DealerScore}. К сожалению, вы проиграли...");
                 }
             }
 
@@ -249,10 +263,10 @@ namespace _21_играаа
 
         private void Button_Click_2(object sender, RoutedEventArgs e)//раздача карт игроку и дилеру и проверка, не перебрал ли игрок
         {
-            var playerCard = _deck.DrawCard();
+            var playerCard = deck.DrawCard();
             PlayerCards.Add(playerCard);
 
-            var dealerCard = _deck.DrawCard();
+            var dealerCard = deck.DrawCard();
             DealerCards.Add(dealerCard);
 
             UpdateScores();
@@ -266,14 +280,14 @@ namespace _21_играаа
 
         private void Button_Click_3(object sender, RoutedEventArgs e)//типо закончить ход и подведение результатов
         {
-            if (_deck.Count == 0)
+            if (deck.Count == 0)
             {
                 MessageBox.Show("Карты закончились, никто не выиграл.");
                 NewGame();
                 return;
             }
 
-            while (DealerScore < 17 && DealerCards.Count < 2)
+            while (DealerScore < 19 && DealerCards.Count < 2)
             {
                 DealCardToDealer();
             }
@@ -306,17 +320,17 @@ namespace _21_играаа
 
     public class Deck//ну тут мы уже чекаем где карты и в конструкторе создаются карты
     {
-        private List<Card> _cards;
+        private List<Card> cards;
         public Deck()
         {
-            _cards = new List<Card>();
+            cards = new List<Card>();
 
             foreach (string suit in new[] { "H", "B", "S", "C" })
             {
                 for (int rank = 2; rank <= 14; rank++)
                 {
                     string fileName = $"/pp/{rank}{suit}.png";
-                    _cards.Add(new Card { Suit = suit, Rank = rank, ImagePath = fileName });
+                    cards.Add(new Card { Suit = suit, Rank = rank, ImagePath = fileName });
                 }
             }
         }
@@ -324,22 +338,22 @@ namespace _21_играаа
         public void Shuffle() //перемешиваем колоду
         {
             Random random = new Random();
-            _cards = _cards.OrderBy(x => random.Next()).ToList();
+            cards = cards.OrderBy(x => random.Next()).ToList();
         }
 
         public Card DrawCard()//раздача карт
         {
-            if (_cards.Count == 0)
+            if (cards.Count == 0)
             {
                 MessageBox.Show("Карты закончились, никто не выиграл.");
                 return null;
             }
-            var card = _cards[0];
-            _cards.RemoveAt(0);
+            var card = cards[0];
+            cards.RemoveAt(0);
             return card;
         }
 
-        public int Count => _cards.Count;//получение количества карт
-        public List<Card> Cards => _cards;
+        public int Count => cards.Count;//получение количества карт
+        public List<Card> Cards => cards;
     }
 }

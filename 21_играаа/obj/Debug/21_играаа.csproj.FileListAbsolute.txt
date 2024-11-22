@@ -15,4 +15,3 @@ C:\Users\DINDO\source\repos\21_играаа\21_играаа\obj\Debug\21_игр�
 C:\Users\DINDO\source\repos\21_играаа\21_играаа\obj\Debug\21_играаа.csproj.CoreCompileInputs.cache
 C:\Users\DINDO\source\repos\21_играаа\21_играаа\obj\Debug\21_играаа.exe
 C:\Users\DINDO\source\repos\21_играаа\21_играаа\obj\Debug\21_играаа.pdb
-C:\Users\DINDO\source\repos\21_играаа\21_играаа\obj\Debug\Window2.g.cs

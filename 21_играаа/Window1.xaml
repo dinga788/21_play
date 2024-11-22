@@ -19,25 +19,25 @@
         </Grid.ColumnDefinitions>
 
         <!-- Количество карт и счёт для компьютера -->
-        <TextBlock Grid.Row="0" FontSize="30" Margin="0,40,0,0">Счёт:</TextBlock>
-        <TextBlock Grid.Row="0" FontSize="30" Margin="0,0,0,0">Карт:</TextBlock>
-        <TextBlock Grid.Row="0" FontSize="30" Margin="70,42,2,0" Text="{Binding DisplayDealerScore}"/>
-        <TextBlock Grid.Row="0" FontSize="30" Margin="70,0,2,0" Text="{Binding DealerCards.Count}"/>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="0,40,0,0" Foreground="#031A42">Счёт:</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="0,0,0,0" Foreground="#031A42">Карт:</TextBlock>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="70,42,2,0" Foreground="#031A42" Text="{Binding DisplayDealerScore}"/>
+        <TextBlock Grid.Row="0" FontSize="30" Margin="70,0,2,0" Foreground="#031A42" Text="{Binding DealerCards.Count}"/>
 
         <!-- Количество карт и счёт для игрока -->
-        <TextBlock Grid.Row="2" FontSize="30" Margin="0,0,0,0">Счёт:</TextBlock>
-        <TextBlock Grid.Row="2" FontSize="30" Margin="0,40,0,0">Карт:</TextBlock>
-        <TextBlock Grid.Row="2" FontSize="30" Margin="70,1,2,0" Text="{Binding PlayerScore}"/>
-        <TextBlock Grid.Row="2" FontSize="30" Margin="70,40,2,0" Text="{Binding PlayerCards.Count}"/>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="0,0,0,0" Foreground="#031A42">Счёт:</TextBlock>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="0,40,0,0" Foreground="#031A42">Карт:</TextBlock>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="70,1,2,0" Foreground="#031A42" Text="{Binding PlayerScore}"/>
+        <TextBlock Grid.Row="2" FontSize="30" Margin="70,40,2,0" Foreground="#031A42" Text="{Binding PlayerCards.Count}"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" Margin="320,0,0,0">Противник</TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Margin="340,1,0,0">Игрок</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" Margin="320,0,0,0" Foreground="#031A42">Противник</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Margin="340,1,0,0" Foreground="#031A42">Игрок</TextBlock>
 
-        <Button Grid.Row="1" Margin="10,110,10,230" Click="Button_Click">Выйти</Button>
-        <Button Grid.Row="1" Margin="10,180,10,160" Click="Button_Click_1">Перезагрузить</Button>
+        <Button Grid.Row="1" Margin="10,110,10,230" Click="Button_Click" FontSize="20" Foreground="#031A42" Background="White">Выйти</Button>
+        <Button Grid.Row="1" Margin="10,180,10,160" Click="Button_Click_1" FontSize="20" Foreground="#031A42" Background="White">Перезагрузить</Button>
 
-        <Button Grid.Row="2" Grid.Column="1" Margin="250,35,410,5" Click="Button_Click_2">Добавить</Button>
-        <Button Grid.Row="2" Grid.Column="1" Margin="370,35,280,5" Click="Button_Click_3">Пропустить</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="250,35,410,5" Click="Button_Click_2" FontSize="20" Foreground="#031A42" Background="White">Добавить</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="370,35,280,5" Click="Button_Click_3" FontSize="20" Foreground="#031A42" Background="White">Пропустить</Button>
 
         <!-- Карты компьютера -->
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="-42,0,0,220">
