@@ -17,6 +17,10 @@ namespace _21_играаа
 
         private Deck deck = new Deck();//ну тут экземляр колоды карт
 
+        private int playerChips = 100; // Фишки игрока
+        private int dealerChips = 100; // Фишки дилера
+        private int currentBet = 0; // Текущая ставка
+
         public Window1()
         {
             InitializeComponent();
@@ -25,6 +29,58 @@ namespace _21_играаа
 
             DataContext = this;//привязка
             NewGame();
+        }
+
+        public int PlayerChips//фишки игрока
+        {
+            get { return playerChips; }
+            set
+            {
+                playerChips = value;
+                OnPropertyChanged(nameof(PlayerChips));
+            }
+        }
+
+        public int DealerChips//фишки компухтера
+        {
+            get { return dealerChips; }
+            set
+            {
+                dealerChips = value;
+                OnPropertyChanged(nameof(DealerChips));
+            }
+        }
+
+        public int CurrentBet//повышение ставки
+        {
+            get { return currentBet; }
+            set
+            {
+                if (value < 10)
+                    return; // Запретить ставку ниже 10
+                currentBet = value;
+                OnPropertyChanged(nameof(CurrentBet));
+            }
+        }
+
+        private void IncreaseBet()//понижение ставки
+        {
+            if (PlayerChips >= CurrentBet + 10) // Проверяем, достаточно ли фишек
+            {
+                CurrentBet += 10;
+            }
+            else
+            {
+                MessageBox.Show("Недостаточно фишек для повышения ставки.");
+            }
+        }
+
+        private void DecreaseBet()
+        {
+            if (CurrentBet > 10) // Проверяем, чтобы ставка не была ниже 10
+            {
+                CurrentBet -= 10;
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -84,15 +140,30 @@ namespace _21_играаа
             NewGame();
         }
 
-        internal void NewGame()//новая игра, где создаётся колода карт и чистим компутахтер и игрока
+        internal void NewGame() // новая игра
         {
-            deck = new Deck();
-            deck.Shuffle();
+            if (deck.Count < 4) // 4 карты на старт (2 игроку и 2 дилеру)
+            {
+                MessageBox.Show("Карты закончились, игра завершена.");
+                Close(); // Закрываем игру
+                return;
+            }
 
             PlayerCards.Clear();
             DealerCards.Clear();
 
-            for (int i = 0; i < 2; i++)//раздаём всем по 2 карты, но карта у компутахтера первая скрыта
+            // Сброс начальной ставки
+            CurrentBet = 10;
+
+            // Проверка на наличие фишек у игрока
+            if (PlayerChips <= 0)
+            {
+                MessageBox.Show("У вас закончились фишки! Игра окончена.");
+                Close();
+                return;
+            }
+
+            for (int i = 0; i < 2; i++) // раздаём всем по 2 карты, но карта у компа первая скрыта
             {
                 PlayerCards.Add(deck.DrawCard());
                 Card dealerCard = deck.DrawCard();
@@ -111,6 +182,13 @@ namespace _21_играаа
             UpdateScores();
 
             CheckForBust();
+        }
+
+        // Метод для завершения игры
+        private void EndGame()
+        {
+            MessageBox.Show("Игра завершена. Спасибо за игру!");
+            Close(); // Закрываем окно игры
         }
 
         private void CheckForBust()//проверка на перебор в начале игры(*исправить*)
@@ -174,8 +252,14 @@ namespace _21_играаа
             return score;
         }
 
-        private void DealCardToDealer()//метод для раздачи карт клмпутахтеру(*исправить*)
+        private void DealCardToDealer() // метод для раздачи карт дилеру
         {
+            if (deck.Count == 0)
+            {
+                EndGame(); // Если карт нет, завершаем игру
+                return;
+            }
+
             if (MinPossibleDealerScore < 19)
             {
                 var dealerCard = deck.DrawCard();
@@ -193,7 +277,7 @@ namespace _21_играаа
             }
         }
 
-        private void CheckWinner()//проверка победителей
+        private void CheckWinner() // проверка победителей
         {
             if (deck.Count == 0)
             {
@@ -210,6 +294,8 @@ namespace _21_играаа
             if (PlayerScore > 21)
             {
                 MessageBox.Show("Увы, перебор! Вы проиграли.");
+                DealerChips += CurrentBet;
+                PlayerChips -= CurrentBet;
                 NewGame();
                 return;
             }
@@ -231,6 +317,8 @@ namespace _21_играаа
             if (DealerScore > 21)
             {
                 MessageBox.Show("Противник перебрал! Вы выиграли.");
+                PlayerChips += CurrentBet;
+                DealerChips -= CurrentBet;
                 NewGame();
                 return;
             }
@@ -240,10 +328,14 @@ namespace _21_играаа
                 if (PlayerScore == 21 && DealerScore != 21)
                 {
                     MessageBox.Show("Блэкджек! Вы победили!");
+                    PlayerChips += CurrentBet;
+                    DealerChips -= CurrentBet;
                 }
                 else if (PlayerScore != 21 && DealerScore == 21)
                 {
                     MessageBox.Show("У противника блэкджек. Вы проиграли!");
+                    DealerChips += CurrentBet;
+                    PlayerChips -= CurrentBet;
                 }
             }
             else
@@ -251,17 +343,35 @@ namespace _21_играаа
                 if (PlayerScore > DealerScore)
                 {
                     MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт противника: {DealerScore}. Вы выиграли!");
+                    PlayerChips += CurrentBet;
+                    DealerChips -= CurrentBet;
                 }
                 else
                 {
                     MessageBox.Show($"Ваш счёт: {PlayerScore}, счёт противника: {DealerScore}. К сожалению, вы проиграли...");
+                    DealerChips += CurrentBet;
+                    PlayerChips -= CurrentBet;
                 }
+            }
+
+            if (PlayerChips <= 0)
+            {
+                MessageBox.Show("У вас закончились фишки! Игра окончена.");
+                Close();
+                return;
+            }
+
+            if (DealerChips <= 0)
+            {
+                MessageBox.Show("У дилера закончились фишки! Игра окончена.");
+                Close();
+                return;
             }
 
             NewGame();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)//раздача карт игроку и дилеру и проверка, не перебрал ли игрок
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)//раздача карт игроку и дилеру и проверка, не перебрал ли игрок
         {
             var playerCard = deck.DrawCard();
             PlayerCards.Add(playerCard);
@@ -278,12 +388,11 @@ namespace _21_играаа
             }
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)//типо закончить ход и подведение результатов
+        private void ButtonSkip_Click(object sender, RoutedEventArgs e)//типо закончить ход и подведение результатов
         {
             if (deck.Count == 0)
             {
-                MessageBox.Show("Карты закончились, никто не выиграл.");
-                NewGame();
+                EndGame();
                 return;
             }
 
@@ -302,6 +411,16 @@ namespace _21_играаа
                 DealerCards[0].IsFaceDown = false;
                 UpdateScores();
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            IncreaseBet();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            DecreaseBet();
         }
     }
 

@@ -37,8 +37,18 @@
         <Button Grid.Row="1" Margin="10,110,10,230" Click="Button_Click" FontSize="20" Foreground="#031A42" Background="White">Выйти</Button>
         <Button Grid.Row="1" Margin="10,180,10,160" Click="Button_Click_1" FontSize="20" Foreground="#031A42" Background="White">Перезагрузить</Button>
 
-        <Button Grid.Row="2" Grid.Column="1" Margin="250,35,410,5" Click="Button_Click_2" FontSize="20" Foreground="#031A42" Background="White">Добавить</Button>
-        <Button Grid.Row="2" Grid.Column="1" Margin="370,35,280,5" Click="Button_Click_3" FontSize="20" Foreground="#031A42" Background="White">Пропустить</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="250,35,410,5" Click="ButtonAdd_Click" FontSize="20" Foreground="#031A42" Background="White">Добавить</Button>
+        <Button Grid.Row="2" Grid.Column="1" Margin="370,35,280,5" Click="ButtonSkip_Click" FontSize="20" Foreground="#031A42" Background="White">Пропустить</Button>
+
+        <!-- Ставка -->
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="30" Margin="0,0,0,0" Foreground="#031A42">Фишки дилера:</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="30" Margin="220,0,0,0" Foreground="#031A42" Text="{Binding DealerChips}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,20,550,0" FontSize="30" Foreground="#031A42">Фишки:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="105,20,530,0" FontSize="30" Foreground="#031A42" Text="{Binding PlayerChips}"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="530,0,0,0" FontSize="30" Foreground="#031A42">Ставка:</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="640,0,0,50" FontSize="30" Foreground="#031A42" Text="{Binding CurrentBet}"/>
+        <Button  Grid.Row="2" Grid.Column="1" Margin="540,40,120,5" FontSize="20" Foreground="#031A42" Background="White" Click="Button_Click_4">Повысить</Button>
+        <Button  Grid.Row="2" Grid.Column="1" Margin="660,40,10,5" FontSize="20" Foreground="#031A42" Background="White" Click="Button_Click_5">Понизить</Button>
 
         <!-- Карты компьютера -->
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="-42,0,0,220">
