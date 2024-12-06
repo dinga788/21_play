@@ -3,12 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|c:\\users\\dindo\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|c:\\users\\dindo\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|solutionrelative:21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|solutionrelative:21_\u0438\u0433\u0440\u0430\u0430\u0430\\window1.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0634AE61-3A77-456D-B355-6007F96B17D4}|21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430.csproj|solutionrelative:21_\u0438\u0433\u0440\u0430\u0430\u0430\\window1.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DINDO\\AppData\\Local\\Temp\\.vsdbgsrc\\3714f74b82eacc6cf8dcf1e32980b0908d4f8b447d25d4eb08ff1424a7b57c02\\ResourcePart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,28 +28,56 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "mainwindow.xaml",
+              "DocumentMoniker": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml",
+              "RelativeDocumentMoniker": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml",
+              "ToolTip": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml",
+              "RelativeToolTip": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\mainwindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-12-06T15:06:18.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResourcePart.cs",
+              "DocumentMoniker": "C:\\Users\\DINDO\\AppData\\Local\\Temp\\.vsdbgsrc\\3714f74b82eacc6cf8dcf1e32980b0908d4f8b447d25d4eb08ff1424a7b57c02\\ResourcePart.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\3714f74b82eacc6cf8dcf1e32980b0908d4f8b447d25d4eb08ff1424a7b57c02\\ResourcePart.cs",
+              "ToolTip": "C:\\Users\\DINDO\\AppData\\Local\\Temp\\.vsdbgsrc\\3714f74b82eacc6cf8dcf1e32980b0908d4f8b447d25d4eb08ff1424a7b57c02\\ResourcePart.cs [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\3714f74b82eacc6cf8dcf1e32980b0908d4f8b447d25d4eb08ff1424a7b57c02\\ResourcePart.cs [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACsAAAAEAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T15:04:42.246Z",
+              "EditorCaption": " [\u0422\u043E\u043B\u044C\u043A\u043E \u0447\u0442\u0435\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Window1.xaml.cs",
               "DocumentMoniker": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml.cs",
               "RelativeDocumentMoniker": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml.cs",
               "ToolTip": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml.cs",
               "RelativeToolTip": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml.cs",
-              "ViewState": "AgIAAIEBAAAAAAAAAAAwwFEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAIEBAAAAAAAAAAAwwJUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T14:08:30.816Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Window1.xaml",
               "DocumentMoniker": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml",
               "RelativeDocumentMoniker": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml",
               "ToolTip": "C:\\Users\\DINDO\\source\\repos\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml",
               "RelativeToolTip": "21_\u0438\u0433\u0440\u0430\u0430\u0430\\Window1.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-22T14:33:30.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T14:33:30.74Z"
             }
           ]
         }

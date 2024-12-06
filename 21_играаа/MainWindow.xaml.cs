@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace _21_играаа
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для mainwindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class mainwindow : Window
     {
-        public MainWindow()
+        public mainwindow()
         {
             InitializeComponent();
-        }
-
-        private void StartGame_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 gameWindow = new Window1();
-            gameWindow.Show();
-            this.Close();
         }
     }
 }

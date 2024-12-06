@@ -55,21 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="mainwindow.xaml.cs">
+      <DependentUpon>mainwindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="mainwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +154,20 @@
     <Resource Include="pp\9H.png" />
     <Resource Include="pp\9S.png" />
     <Resource Include="pp\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="файлы из фигмы\Ellipse 1.png" />
+    <Resource Include="файлы из фигмы\Ellipse 3.png" />
+    <Resource Include="файлы из фигмы\Line 1.png" />
+    <Resource Include="файлы из фигмы\Line 2.png" />
+    <Resource Include="файлы из фигмы\Line 3.png" />
+    <Resource Include="файлы из фигмы\Line 4.png" />
+    <Resource Include="файлы из фигмы\Line 5.png" />
+    <Resource Include="файлы из фигмы\Polygon 1.png" />
+    <Resource Include="файлы из фигмы\Polygon 3.png" />
+    <Resource Include="файлы из фигмы\Vector 1.png" />
+    <Resource Include="файлы из фигмы\Vector 2.png" />
+    <Resource Include="файлы из фигмы\Vector 3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

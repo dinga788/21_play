@@ -1,33 +1,34 @@
-﻿<Window x:Class="_21_играаа.MainWindow"
+﻿<Window x:Class="_21_играаа.mainwindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_21_играаа"
         mc:Ignorable="d"
-        Title="MainWindow" Height="788" Width="506" Background="#F7516A" WindowStyle="None">
+        Title="mainwindow" Height="788" Width="506" WindowStyle="None">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*"/>
-            <ColumnDefinition Width="307*"/>
-            <ColumnDefinition Width="100*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="127*"/>
-            <RowDefinition Height="177*"/>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="171*"/>
-            <RowDefinition Height="95*"/>
-            <RowDefinition Height="127*"/>
-        </Grid.RowDefinitions>
-
-        <TextBlock Grid.Row="3" Grid.Column="1" TextAlignment="Center" FontSize="30" FontWeight="Medium" Margin="0,15,0,0" Foreground="#031A42">Добро пожаловать!</TextBlock>
-
-        <Button Grid.Row="4" Grid.Column="1" Margin="30,50,30,50" FontSize="20" Background="White" Foreground="#031A42" Click="StartGame_Click">Играть</Button>
-
-        <TextBlock Grid.Row="1" Foreground="White" TextAlignment="Center" FontSize="140" Margin="0,-40,0,0">A</TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="3" Foreground="White" TextAlignment="Center" FontSize="140" Margin="0,-40,0,0">A</TextBlock>
-
+        <Image Panel.ZIndex="1" Margin="123,284,123,284" Source="/файлы из фигмы/Vector 1.png" Stretch="Fill"/>
+        <Image Panel.ZIndex="1" Margin="0,80,438,650" Source="/файлы из фигмы/Vector 2.png" Stretch="Fill"/>
+        <Image Margin="437,650,0,80" Source="/файлы из фигмы/Vector 3.png" Stretch="Fill"/>
+        <Image Margin="30,66,468,225" Source="/файлы из фигмы/Line 1.png" Stretch="Fill"/>
+        <Image Margin="12,195,422,587" Source="/файлы из фигмы/Line 2.png" Stretch="Fill"/>
+        <Image Margin="23,174,432,608" Source="/файлы из фигмы/Line 3.png" Stretch="Fill"/>
+        <Image Source="/файлы из фигмы/Union.png" Stretch="Fill" Margin="162,0,0,474"/>
+        <Image Margin="68,235,192,193" Source="/файлы из фигмы/Line 4.png" Stretch="Fill"/>
+        <Image Margin="350,271,122,109" Source="/файлы из фигмы/Line 5.png" Stretch="Fill"/>
+        <Image Margin="301,461,161,274" Source="/файлы из фигмы/Polygon 1.png" Stretch="Fill"/>
+        <Image Margin="162,475,301,260" Source="/файлы из фигмы/Polygon 3.png" Stretch="Fill"/>
+        <TextBlock Foreground="White" Panel.ZIndex="1" FontSize="30" Margin="170,355,150,350" FontFamily="Allerta Stencil">Start game!</TextBlock>
+        <TextBlock Margin="3,-20,430,700" FontSize="80" FontFamily="Allerta Stencil">A</TextBlock>
+        <TextBlock Margin="420,700,5,0" FontSize="80" FontFamily="Allerta Stencil">
+            <TextBlock.RenderTransformOrigin>
+                <Point X="0.5" Y="0.5"/>
+                <!-- Центр вращения -->
+            </TextBlock.RenderTransformOrigin>
+            <TextBlock.RenderTransform>
+                <RotateTransform Angle="180"/>
+            </TextBlock.RenderTransform>
+    A
+        </TextBlock>
     </Grid>
 </Window>
